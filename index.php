@@ -23,10 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: dashboard.php');
             exit;
         } else {
-            $message = 'Login failed';
+            $message = 'Connection échoué.';
         }
     } else {
-        $message = 'Please fill both fields';
+        $message = 'Remplissez tous les champs !';
     }
 }
 ?>
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 </head>
 <body>
-    <h1>Login</h1>
+    <h1>Connection</h1>
     <form action="index.php" method="post">
         Non d'utilisateur: <input type="text" name="nom_utilisateur"><br>
         Mot de passe: <input type="password" name="mot_de_passe"><br>

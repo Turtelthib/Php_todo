@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['taches'])) {
     <?php endif; ?>
 </head>
 <body>
-    <h1>Your Tasks</h1>
+    <h1>Vos tâches</h1>
     <form action="dashboard.php" method="post">
         <input type="text" name="taches" required>
         <input type="submit" value="Ajouter">
