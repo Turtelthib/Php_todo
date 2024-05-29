@@ -34,6 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <?php if (isset($_SESSION['dark_mode']) && $_SESSION['dark_mode']): ?>
+        <link rel="stylesheet" href="dark_mode.css">
+    <?php endif; ?>
 </head>
 <body>
     <h1>Login</h1>
@@ -44,5 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
     <p><?= $message ?></p>
     <p>Pas de compte ? <a href="register.php">Créez-en un dès maintenant!</a></p>
+
+    <form action="dark_mode.php" method="POST" style="position: absolute; top: 10px; right: 10px;">
+        <input type="hidden" name="dark_mode" value="<?php echo isset($_SESSION['dark_mode']) && $_SESSION['dark_mode'] ? 'false' : 'true'; ?>">
+        <button type="submit"><?php echo isset($_SESSION['dark_mode']) && $_SESSION['dark_mode'] ? 'Light Mode' : 'Dark Mode'; ?></button>
+    </form>
 </body>
 </html>
